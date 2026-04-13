@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.MainController"
+            stylesheets="@style.css"
+            prefWidth="820"
+            prefHeight="520">
+
+    <top>
+        <VBox fx:id="headerBox">
+            <Label fx:id="titleLabel" text="PROJET VELIBS — Disponibilité en temps réel"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label fx:id="filterLabel" text="Filtrer par :"/>
+                <ComboBox fx:id="filterTypeComboBox" prefWidth="160"/>
+                <ComboBox fx:id="filterValueComboBox" prefWidth="220"/>
+            </HBox>
+            <VBox.margin><Insets top="0" right="0" bottom="0" left="0"/></VBox.margin>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="6">
+            <children>
+                <Label fx:id="stationsLabel" text="Stations"/>
+                <ListView fx:id="stationListView" prefHeight="320"/>
+            </children>
+            <padding>
+                <Insets top="12" right="10" bottom="8" left="10"/>
+            </padding>
+        </VBox>
+    </center>
+
+    <right>
+        <VBox fx:id="detailBox" spacing="8" prefWidth="240">
+            <children>
+                <Label fx:id="detailTitle" text="Détails de la station"/>
+                <Label fx:id="availableBikesLabel" wrapText="true"/>
+            </children>
+            <VBox.margin><Insets top="12" right="10" bottom="8" left="0"/></VBox.margin>
+        </VBox>
+    </right>
+
+    <bottom>
+        <HBox>
+            <children>
+                <TextArea fx:id="infoArea" editable="false" wrapText="true" prefRowCount="3"
+                          HBox.hgrow="ALWAYS"/>
+            </children>
+            <padding>
+                <Insets top="0" right="10" bottom="10" left="10"/>
+            </padding>
+        </HBox>
+    </bottom>
+
+</BorderPane>
